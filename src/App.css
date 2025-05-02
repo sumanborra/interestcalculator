@@ -1,38 +1,285 @@
-.App {
+.App{
+  min-height: 100vh;
+  background-color: aliceblue;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+}
+.background-color-darkmode{
+  background-image: url(".././public/images/blackdesktop.png");
+  background-size: cover;
+}
+.background-color-lightmode{
+  background-image: url(".././public/images/bluedesktop.png");
+  background-size: cover;
+}
+@media (max-width:767px){
+  .background-color-darkmode{
+    background-image: url(".././public/images/blackmobile.png");
+  }
+  .background-color-lightmode{
+    background-image: url(".././public/images/bluedesktop.png");
+    background-size: cover;
+  }
+}
+.heading{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 42px;
+  color: #999797;
+  margin-left: 180px;
+}
+@media (max-width:767px){
+  .heading{
+    font-size: 26px;
+    color: #ffffff;
+    margin-left: 0px;
+  }
+}
+.form-container{
+  padding: 10px;
+  border: 1px solid rgb(120, 20, 219);
+  margin-top: 30px;
+  border-radius: 10px;
+  background-color: rgb(184, 216, 244);
+  width: 40%;
+}
+@media (max-width:767px){
+  .form-container{
+    width: 90%;
+  }
+}
+label{
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 42px;
+}
+@media (max-width:767px){
+  label{
+    font-size: 28px;
+  }
+}
+.span-style-for-form{
+  margin-left: 50px;
+}
+@media (max-width:767px){
+ .span-style-for-form{
+  margin-left: 0px;
+ }
+}
+.input-element{
+  height: 40px;
+  width: 180px;
+  border-radius: 10px;
+  
+  padding: 5px;
+  font-size: 26px;
+}
+.input-element-amount{
+  margin-left: 25px;
+  height: 40px;
+  width: 220px;
+  border-radius: 10px;
+  
+  padding: 5px;
+  font-size: 26px;
+}
+@media (max-width:767px){
+  .input-element-amount{
+    margin-left: 1px;
+    height: 30px;
+    width: 180px;
+    font-size: 18px;
+  }
+  .input-element{
+    height: 30px;
+    width: 180px;
+    font-size: 18px;
+  }
+}
+.input-element-interest{
+  
+  height: 40px;
+  width: 220px;
+  border-radius: 10px;
+  
+  padding: 5px;
+  font-size: 26px;
+}
+@media (max-width:767px){
+  .input-element-interest{
+    height: 30px;
+    width: 180px;
+    font-size: 18px;
+  }
+}
+.input-element-border-red{
+  border: 1px solid rgb(213, 24, 24);
+}
+.input-element-border-green{
+  border: 1px solid rgb(82, 243, 82);
+}
+.buttn-container{
+  text-align: center;
+  margin-top: 10px;
+}
+.buttn{
+  background-color: rgb(41, 41, 201);
+  height: 40px;
+  width: 120px;
+  color: #ffffff;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 26px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.errorMsg{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 22px;
+  color: rgb(211, 20, 20);
+  font-weight: 500;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media (max-width:767px){
+  .errorMsg{
+    font-size: 18px;
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.result-text{
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 28px;
+  font-weight: 500;
+}
+@media (max-width:767px){
+  .result-text{
+    font-size: 18px;
+  }
+}
+.amount-value-span-style{
+  font-weight: 900;
+}
+.hr-line-style{
+  width: 100%;
+  border: 2px dotted rgb(248, 245, 245);
+}
+.form-main-container{
+  width: 100vw;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  line-height: 0.5;
+}
+@media (max-width:767px){
+  .form-main-container{
+    line-height: 1.3;
+    width: 90%;
+  }
+}
+.results-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 10px;
+  line-height: 0.2;
+  background-color: rgb(150, 230, 237);
+  width: 40%;
+  border-radius: 10px;
+  margin: 10px;
+}
+@media (max-width: 766px) {
+  .results-container{
+    width: 90%;
+    line-height: 0.8;
+  }
+}
+.header-section{
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+@media (max-width:768px){
+  .header-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 100%;
+  }
+}
+.buttnchange{
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  background-color: transparent;
+  color: #ffffff;
+  cursor: pointer;
+  border: 1px solid #788458;
+  border-radius: 5px;
+}
+.para-text{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: blue;
+  
+}
+.span-for-label{
+  color: rgb(253, 19, 19);
+}
+.select-element{
+  height: 30px;
+  width: 80px;
+  border: 1px solid rgb(230, 8, 230);
+  border-radius: 5px;
+  cursor: pointer;
+  
+}
+@media (max-width:767px){
+  .select-element{
+    margin-top: 10px;
+  }
+}
+.start-date-in-telugu{
+  font-size: 28px;
+}
+@media (max-width:767px){
+  .start-date-in-telugu{
+    font-size: 14px;
+  }
 }
 
-.App-link {
-  color: #61dafb;
+@media (max-width:767px){
+  .span-style-for-telugu-form{
+    margin-left: 12.5px;
+    
+  }
+  .span-style-for-telugu-form-interest{
+    margin-left: 18.5px;
+    margin-right: 10px;
+  }
+  .span-style-for-form-telugu-amount{
+    margin-right: 10px;
+    margin-left: 2.5px;
+  }
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (min-width:768px){
+  .span-style-for-telugu-form{
+    margin-left: 75px;
   }
-  to {
-    transform: rotate(360deg);
+  .span-style-for-telugu-form-interest{
+    margin-left: 86px;
+    margin-right: 16px;
   }
+  .span-style-for-form-telugu-amount{
+    margin-right: 0px;
+    margin-left: 55px;
+  }
+  .input-element-amount-telugu{
+    margin-left: 15px;
+  }
+}
+.buttn-in-telugu{
+  font-size: 16px;
 }
