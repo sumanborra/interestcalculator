@@ -127,7 +127,7 @@ function App() {
           <p className='result-text'>ఇచ్చిన అప్పు: <span className="amount-value-span-style">{amount}/- రూ,,</span></p>
           <p className='result-text'>నెలకు వడ్డీ రేటు : <span className="amount-value-span-style">{interest}/- రూ,,</span></p>
           <p className='result-text'> మొత్తం వడ్డీ : <span className="amount-value-span-style">{totalInterest}/- రూ,,</span></p>
-          <p className='result-text'>చెల్లించాల్సిన మొత్తం  :<span className="amount-value-span-style">{parseInt(amount)+totalInterest}/- రూ,,</span></p>
+          <p className='result-text'>చెల్లించాల్సిన మొత్తం  :<span className="amount-value-span-style">{parseInt(amount)+Math.round(totalInterest,2)}/- రూ,,</span></p>
           </div>}
       </div>
       </>
