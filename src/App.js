@@ -66,8 +66,8 @@ function App() {
       years--;
       months += 12;
     }
-    const convertYearsToMonths = (years*12) + months + days/100
-    const interestAmountOfPrice = convertYearsToMonths*amount*interest/100
+    const convertYearsToMonths = (years*12) + months + days/30
+    const interestAmountOfPrice = Math.round((convertYearsToMonths*amount*interest/100),2)
     setTotalInterest(interestAmountOfPrice)
     
     
@@ -165,7 +165,7 @@ function App() {
           <p className='result-text'>Amount: <span className="amount-value-span-style">{amount}/- Rs</span></p>
           <p className='result-text'>Interest rate for month : <span className="amount-value-span-style">{interest}/- Rs</span></p>
           <p className='result-text'> Total Interest is : <span className="amount-value-span-style">{totalInterest}/- Rs</span></p>
-          <p className='result-text'>Total Amount You Pay : <span className="amount-value-span-style">{parseFloat(amount)+totalInterest}/- Rs</span></p>
+          <p className='result-text'>Total Amount You Pay : <span className="amount-value-span-style">{parseFloat(amount)+Math.round(totalInterest)}/- Rs</span></p>
           </div>}
       </div>
     </>)
