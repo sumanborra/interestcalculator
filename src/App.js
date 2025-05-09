@@ -5,10 +5,10 @@ import {useState} from "react"
 function App() {
   const[startDate, setStartDate] = useState("")
   const[endDate, setEndDate] = useState("")
-  const[amount, setAmount] = useState("")
-  const[interest, setInterest] = useState("")
+  const[amount, setAmount] = useState(0)
+  const[interest, setInterest] = useState(0)
   const[showResults, setShowResults] = useState({isTrue:false,results:{}})
-  const[totalInterest, setTotalInterest] = useState("");
+  const[totalInterest, setTotalInterest] = useState(0);
   const[errMessage, setErrMessage] = useState({iserr:false,errMsg:""})
   const[theme, setTheme] = useState(false)
   const[language, setLanguage] = useState("English")
@@ -67,7 +67,7 @@ function App() {
       months += 12;
     }
     const convertYearsToMonths = (years*12) + months + days/30
-    const interestAmountOfPrice = Math.round((convertYearsToMonths*amount*interest/100),2)
+    const interestAmountOfPrice = (convertYearsToMonths*amount*interest/100).toFixed(2)
     setTotalInterest(interestAmountOfPrice)
     
     
@@ -127,7 +127,7 @@ function App() {
           <p className='result-text'>ఇచ్చిన అప్పు: <span className="amount-value-span-style">{amount}/- రూ,,</span></p>
           <p className='result-text'>నెలకు వడ్డీ రేటు : <span className="amount-value-span-style">{interest}/- రూ,,</span></p>
           <p className='result-text'> మొత్తం వడ్డీ : <span className="amount-value-span-style">{totalInterest}/- రూ,,</span></p>
-          <p className='result-text'>చెల్లించాల్సిన మొత్తం  :<span className="amount-value-span-style">{parseInt(amount)+Math.round(totalInterest,2)}/- రూ,,</span></p>
+          <p className='result-text'>చెల్లించాల్సిన మొత్తం  :<span className="amount-value-span-style">{parseInt(amount)+parseFloat(totalInterest)}/- రూ,,</span></p>
           </div>}
       </div>
       </>
@@ -144,7 +144,7 @@ function App() {
             <option value="Telugu">తెలుగు</option>
           </select>
         </div>
-        <p className='para-text'>(Give the interest in rupiees for 100 for one month)</p>
+        <p className='para-text'>(Give the interest in rupees for 100 for one month)</p>
       <form className="form-container" onSubmit={submitFormDetails}>
         {errMessage !== "" && <p className='errorMsg'>{errMessage.errMsg}</p>}
         <label htmlFor="startDate">StartDate: </label>
@@ -165,7 +165,7 @@ function App() {
           <p className='result-text'>Amount: <span className="amount-value-span-style">{amount}/- Rs</span></p>
           <p className='result-text'>Interest rate for month : <span className="amount-value-span-style">{interest}/- Rs</span></p>
           <p className='result-text'> Total Interest is : <span className="amount-value-span-style">{totalInterest}/- Rs</span></p>
-          <p className='result-text'>Total Amount You Pay : <span className="amount-value-span-style">{parseFloat(amount)+Math.round(totalInterest)}/- Rs</span></p>
+          <p className='result-text'>Total Amount You Pay : <span className="amount-value-span-style">{parseFloat(amount)+parseFloat(totalInterest)}/- Rs</span></p>
           </div>}
       </div>
     </>)
